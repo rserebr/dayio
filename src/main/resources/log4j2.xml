@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" packages="com">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%-5level}{DEBUG=blue} %logger{36} - %highlight{%msg%n}{DEBUG=blue}" disableAnsi="false"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.dayio.automation.ui.core" additivity="false" level="DEBUG">
+            <Appender-ref ref="Console"/>
+            <Appender-ref ref="ReportPortalAppender"/>
+        </Logger>
+        <Logger name="com.dayio.automation.ui.pages" additivity="false" level="DEBUG">
+            <Appender-ref ref="Console"/>
+            <Appender-ref ref="ReportPortalAppender"/>
+        </Logger>
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
